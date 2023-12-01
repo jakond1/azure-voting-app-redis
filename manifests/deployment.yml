@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: jakondazurevotingappredis 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jakondazurevotingappredis
+  template:
+    metadata:
+      labels:
+        app: jakondazurevotingappredis 
+    spec:
+      containers:
+        - name: jakondazurevotingappredis 
+          image: aksjenkins.azurecr.io/jakondazurevotingappredis
+          ports:
+          - containerPort: 80
